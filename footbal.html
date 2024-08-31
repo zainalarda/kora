@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة بث مباشر لكرة القدم</title>
+    <link rel="stylesheet" href="footbal.css">
+</head>
+<body>
+    <header id="navbar">
+        <nav>
+            <ul>
+                <li><a href="#" id="login-link" class="visible">تسجيل الدخول</a></li>
+                <li><a href="#" id="logout-link" class="hidden">تسجيل الخروج</a></li>
+                <li><a href="#" id="add-stream-link" class="hidden">إضافة بث مباشر</a></li>
+                <li><a href="#" id="api-info-link" class="hidden">معلومات المباريات</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="stream-container" class="hidden">
+        <h1>البثوث المباشرة لكرة القدم</h1>
+        <div id="streams-list"></div>
+    </main>
+
+    <div id="login-container" class="visible">
+        <h2>تسجيل الدخول</h2>
+        <form id="login-form">
+            <label for="login-username">اسم المستخدم:</label>
+            <input type="text" id="login-username" required>
+            <label for="login-password">كلمة المرور:</label>
+            <input type="password" id="login-password" required>
+            <button type="submit">تسجيل الدخول</button>
+            <p id="login-error" class="error"></p>
+            <p>ليس لديك حساب؟ <a href="#" id="show-register">تسجيل</a></p>
+        </form>
+    </div>
+
+    <div id="register-container" class="hidden">
+        <h2>تسجيل</h2>
+        <form id="register-form">
+            <label for="register-username">اسم المستخدم:</label>
+            <input type="text" id="register-username" required>
+            <label for="register-password">كلمة المرور:</label>
+            <input type="password" id="register-password" required>
+            <button type="submit">تسجيل</button>
+            <p id="register-error" class="error"></p>
+            <p>لديك حساب؟ <a href="#" id="show-login">تسجيل الدخول</a></p>
+        </form>
+    </div>
+
+    <div id="add-stream-form" class="hidden">
+        <h2>إضافة بث مباشر</h2>
+        <form id="new-stream-form">
+            <label for="stream-title">عنوان البث:</label>
+            <input type="text" id="stream-title" required>
+            <label for="stream-url">رابط البث:</label>
+            <input type="url" id="stream-url" required>
+            <label for="match-result">نتيجة المباراة:</label>
+            <input type="text" id="match-result">
+            <label for="match-info">معلومات المباراة:</label>
+            <textarea id="match-info"></textarea>
+            <button type="submit">إضافة بث</button>
+            <button type="button" id="cancel-add-stream">إلغاء</button>
+        </form>
+    </div>
+
+    <div id="api-info-container" class="hidden">
+        <h2>معلومات المباريات</h2>
+        <div id="api-info"></div>
+    </div>
+
+    <script src="footbal.js"></script>
+</body>
+</html>
